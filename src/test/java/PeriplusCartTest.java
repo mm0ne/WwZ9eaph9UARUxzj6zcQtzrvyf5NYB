@@ -7,13 +7,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.*;
+import org.testng.Assert;
 import io.github.cdimascio.dotenv.Dotenv;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import java.time.Duration;
 import java.util.List;
 
 
-import org.testng.Assert;
 
 public class PeriplusCartTest {
     WebDriver driver;
@@ -199,6 +199,18 @@ public class PeriplusCartTest {
         checkItemIsNotInCart(productUrl);
     }
 
+  /**
+ * <h2>Add Item to Cart (Positive) Test</h2>
+ * <ul>
+ *     <li><b>id</b>: TC001</li>
+ *     <li><b>name</b>: Add Available Item to Cart</li>
+ *     <li><b>description</b>: Add Items with Available Stock to cart</li>
+ *     <li><b>preconditions</b>: User have to be logged in first</li>
+ *     <li><b>testData</b>: username and password</li>
+ *     <li><b>expectedResult</b>: Items can be seen on cart page after clicking "add to cart" on the product detail page.</li>
+ *     <li><b>priority</b>: HIGH</li>
+ * </ul>
+ */
     @Test
     void AddAvailableStockItemToCart() {
         login();
@@ -210,6 +222,18 @@ public class PeriplusCartTest {
         logout();
     }
 
+     /**
+ * <h2>Add Item to Cart (Negative) Test</h2>
+ * <ul>
+ *     <li><b>id</b>: TC002</li>
+ *     <li><b>name</b>: Add Unavailable Item to Cart</li>
+ *     <li><b>description</b>: Add Items with No Stock to cart</li>
+ *     <li><b>preconditions</b>: User have to be logged in first</li>
+ *     <li><b>testData</b>: username and password</li>
+ *     <li><b>expectedResult</b>: Items can't be seen on cart the page after clicking "add to cart" on the product detail page.</li>
+ *     <li><b>priority</b>: HIGH</li>
+ * </ul>
+ */
     @Test
     void AddOutOfStockItemToCart() {
         login();
@@ -219,6 +243,18 @@ public class PeriplusCartTest {
         logout();
     }
 
+     /**
+ * <h2>Delete Item From Cart Test</h2>
+ * <ul>
+ *     <li><b>id</b>: TC003</li>
+ *     <li><b>name</b>: Delete Item From Cart</li>
+ *     <li><b>description</b>: Delete Item from Cart regardless of its quantity</li>
+ *     <li><b>preconditions</b>: User have to be logged in first and Cart can't be empty</li>
+ *     <li><b>testData</b>: username, password and urlProduct</li>
+ *     <li><b>expectedResult</b>: Items can't be seen anymore on the cart the page after clicking "remove" button from the cart.</li>
+ *     <li><b>priority</b>: MEDIUM</li>
+ * </ul>
+ */
     @Test
     void DeleteItemFromCart(){
         login();
