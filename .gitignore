@@ -1,0 +1,40 @@
+# Gradle build
+.gradle/
+build/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# VS Code
+.vscode/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Java-specific
+*.class
+
+# Distribution
+/dist/
+/libs/
+
+# Dependency caches
+**/dependency-cache/
+**/build/
+
+# Gradle Wrapper
+!gradle/wrapper/gradle-wrapper.jar
+
+# Generated files
+*.war
+*.jar
+*.ear
+*.env
